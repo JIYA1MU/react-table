@@ -32,7 +32,6 @@ const columns = [
 const PrimeReact = () => {
   const [data, setData] = useState<TableValue[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
-  const [selectAll, setSelectAll] = useState<boolean>(false);
   const [selectedProducts, setSelectedProducts] = useState<TableValue[] | null>(
     null
   );
@@ -104,7 +103,7 @@ const PrimeReact = () => {
           minWidth: "50rem",
         }}
         loading={loading}
-        selectionMode={selectAll ? null : "multiple"}
+        selectionMode={"multiple"}
         selection={selectedProducts!}
         onSelectionChange={(e: any) => setSelectedProducts(e.value)}
         onPage={(e) => {
